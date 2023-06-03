@@ -10,7 +10,6 @@
     # pkgs.apacheKafka
     pkgs.aws-iam-authenticator
     pkgs.awscli
-    pkgs.bat
     pkgs.emacs
     pkgs.fd
     # pkgs.ghc
@@ -19,11 +18,12 @@
     # pkgs.haskellPackages.haskell-language-server
     # pkgs.inconsolata-nerdfont
     pkgs.jdt-language-server
+    pkgs.just
     pkgs.jsonnet
     pkgs.kubectl
     pkgs.maven
     pkgs.mysql-client
-    pkgs.neovide
+    # pkgs.neovide
     pkgs.neovim
     pkgs.nodejs-16_x
     pkgs.nodePackages.typescript-language-server
@@ -31,10 +31,11 @@
     pkgs.ripgrep
     # pkgs.rlwrap
     pkgs.rust-analyzer
+    pkgs.rust-script
     pkgs.rustup
     # pkgs.sbcl
-    pkgs.source-code-pro
-    pkgs.xonsh
+    # pkgs.source-code-pro
+    # pkgs.xonsh
     pkgs.yarn
     # pkgs.zellij
   ];
@@ -55,10 +56,11 @@
 
   programs.bash.enable = true;
   programs.bat = import ./home-bat.nix pkgs;
-  programs.bottom.enable = true;
+  programs.btop.enable = true;
   programs.exa = import ./home-exa.nix;
   programs.fish = import ./home-fish.nix pkgs;
   programs.fzf.enable = true;
+  programs.gh.enable = true;
   programs.git.enable = true;
   programs.java.enable = true;
   programs.java.package = pkgs.jdk17;
