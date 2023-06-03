@@ -54,6 +54,7 @@
 
 
   programs.bash.enable = true;
+  programs.bat = import ./home-bat.nix pkgs;
   programs.bottom.enable = true;
   programs.exa = import ./home-exa.nix;
   programs.fish = import ./home-fish.nix pkgs;
