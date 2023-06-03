@@ -55,6 +55,7 @@
 
   programs.bash.enable = true;
   programs.bottom.enable = true;
+  programs.exa = import ./home-exa.nix;
   programs.fish = import ./home-fish.nix pkgs;
   programs.fzf.enable = true;
   programs.git.enable = true;
