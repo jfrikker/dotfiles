@@ -6,6 +6,9 @@
   home.username = "jfrikker";
   home.homeDirectory = "/Users/jfrikker";
 
+  home.sessionVariables.TEST = "foo";
+  home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+
   home.packages = [
     # pkgs.apacheKafka
     pkgs.aws-iam-authenticator
@@ -30,9 +33,11 @@
     pkgs.postgresql
     pkgs.ripgrep
     # pkgs.rlwrap
-    pkgs.rust-analyzer
+    # pkgs.rust-analyzer
     pkgs.rust-script
-    pkgs.rustup
+    pkgs.rust-bin.stable."1.68.0".default
+    pkgs.rust-bin.stable."1.68.0".rust-analyzer
+    # pkgs.rustup
     # pkgs.sbcl
     # pkgs.source-code-pro
     # pkgs.xonsh
