@@ -4,7 +4,7 @@
 
 local opt = vim.opt
 opt.autowriteall = true
-opt.colorcolumn = "121"
+opt.colorcolumn = "100"
 opt.hidden = false
 opt.tabstop = 4
 opt.shiftwidth = 4
