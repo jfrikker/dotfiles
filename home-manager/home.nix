@@ -67,6 +67,7 @@
   programs.fzf.enable = true;
   programs.gh.enable = true;
   programs.git.enable = true;
+  programs.git.delta.enable = true;
   programs.java.enable = true;
   programs.java.package = pkgs.jdk17;
   programs.jq.enable = true;
