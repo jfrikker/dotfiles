@@ -8,6 +8,7 @@
 
   home.sessionVariables.TEST = "foo";
   home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+  home.sessionVariables.BAT_THEME = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
 
   home.packages = [
     # pkgs.apacheKafka
@@ -15,6 +16,7 @@
     pkgs.awscli
     pkgs.emacs
     pkgs.fd
+    pkgs.fend
     # pkgs.ghc
     # pkgs.go
     # pkgs.haskellPackages.cabal-install
@@ -41,6 +43,7 @@
     # pkgs.rustup
     # pkgs.sbcl
     # pkgs.source-code-pro
+    pkgs.tokei
     # pkgs.xonsh
     pkgs.yarn
     # pkgs.zellij
