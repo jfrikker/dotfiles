@@ -19,6 +19,7 @@
     # pkgs.go
     # pkgs.haskellPackages.cabal-install
     # pkgs.haskellPackages.haskell-language-server
+    pkgs.httpie
     # pkgs.inconsolata-nerdfont
     pkgs.jdt-language-server
     pkgs.just
