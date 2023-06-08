@@ -8,13 +8,15 @@
 
   home.sessionVariables.TEST = "foo";
   home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
-  home.sessionVariables.BAT_THEME = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+  home.sessionVariables.BAT_THEME = "catppuccin-macchiato";
 
   home.packages = [
     # pkgs.apacheKafka
+    pkgs.aria
     pkgs.aws-iam-authenticator
     pkgs.awscli
-    pkgs.emacs
+    pkgs.bashInteractive
+    # pkgs.emacs
     pkgs.fd
     pkgs.fend
     # pkgs.ghc
@@ -68,8 +70,8 @@
   programs.btop.enable = true;
   programs.exa = import ./home-exa.nix;
   programs.fish = import ./home-fish.nix pkgs;
-  programs.fzf.enable = true;
-  programs.gh.enable = true;
+  programs.fzf = import ./home-fzf.nix;
+  # programs.gh.enable = true;
   programs.git.enable = true;
   programs.git.delta.enable = true;
   programs.java.enable = true;
@@ -79,6 +81,7 @@
   programs.lazygit.enable = true;
   programs.starship = import ./home-starship.nix;
   programs.tmux = import ./home-tmux.nix;
+  programs.zoxide.enable = true;
 
   # programs.neovim = import ./home-neovim.nix pkgs;
 }
