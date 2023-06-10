@@ -57,7 +57,7 @@
         pkgs.neovim
         pkgs.nodejs-16_x
         pkgs.nodePackages.typescript-language-server
-        pkgs.postgresql
+        # pkgs.postgresql
         pkgs.ripgrep
         # pkgs.rlwrap
         # pkgs.rust-analyzer
