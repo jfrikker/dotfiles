@@ -3,6 +3,7 @@ pkgs:
     enable = true;
     shellAliases = {
         nsh = "nix-shell --command fish";
+        cd = "z";
       };
 #    interactiveShellInit = ''
 #      function fish_prompt

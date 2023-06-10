@@ -1,4 +1,4 @@
-{
+pkgs: {
     enable = true;
     settings = {
         add_newline = false;
@@ -12,9 +12,17 @@
         nix_shell.symbol = " ";
         nodejs.symbol = " ";
         package.disabled = true;
+        palette = "catppuccin_macchiato";
         python.symbol = " ";
         package.symbol = " ";
         rust.symbol = " ";
         shell.disabled = false;
-    };
+    } // builtins.fromTOML (builtins.readFile
+        (pkgs.fetchFromGitHub
+          {
+            owner = "catppuccin";
+            repo = "starship";
+            rev = "3e3e54410c3189053f4da7a7043261361a1ed1bc"; # Replace with the latest commit hash
+            sha256 = "soEBVlq3ULeiZFAdQYMRFuswIIhI9bclIU8WXjxd7oY=";
+          } + /palettes/macchiato.toml));
 }
