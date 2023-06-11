@@ -5,7 +5,10 @@ pkgs: {
     escapeTime = 0;
     keyMode = "vi";
     mouse = true;
-    plugins = [pkgs.tmuxPlugins.catppuccin];
+    plugins = [{
+        plugin = pkgs.tmuxPlugins.catppuccin;
+        extraConfig = "set -g @catppuccin_window_tabs_enabled on";
+    }];
     shortcut = "Space";
     tmuxinator.enable = true;
     extraConfig = ''

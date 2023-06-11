@@ -35,15 +35,15 @@ return {
   --   "rafamadriz/friendly-snippets",
   --   enabled = false,
   -- },
-  {
-    "folke/noice.nvim",
-    enabled = false,
-    opts = {
-      cmdline = {
-        view = "cmdline",
-      },
-    },
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   enabled = false,
+  --   opts = {
+  --     cmdline = {
+  --       view = "cmdline",
+  --     },
+  --   },
+  -- },
   {
     "echasnovski/mini.pairs",
     enabled = false,

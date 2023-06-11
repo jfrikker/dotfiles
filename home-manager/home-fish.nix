@@ -5,6 +5,7 @@ pkgs:
         nsh = "nix-shell --command fish";
         cd = "z";
       };
+
 #    interactiveShellInit = ''
 #      function fish_prompt
 #        set -l last_status $status
