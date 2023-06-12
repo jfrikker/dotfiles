@@ -2,8 +2,11 @@ pkgs:
   {
     enable = true;
     shellAliases = {
-        nsh = "nix-shell --command fish";
         cd = "z";
+        du = "dust";
+        http = "xh";
+        https = "xh";
+        nsh = "nix-shell --command fish";
       };
 
 #    interactiveShellInit = ''

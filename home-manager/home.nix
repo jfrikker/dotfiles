@@ -48,6 +48,7 @@
         pkgs.aws-iam-authenticator
         pkgs.awscli
         pkgs.bashInteractive
+        pkgs.du-dust
         # pkgs.emacs
         pkgs.fd
         pkgs.fend
@@ -55,7 +56,7 @@
         # pkgs.go
         # pkgs.haskellPackages.cabal-install
         # pkgs.haskellPackages.haskell-language-server
-        pkgs.httpie
+        # pkgs.httpie
         # pkgs.inconsolata-nerdfont
         pkgs.jdt-language-server
         pkgs.just
@@ -78,6 +79,7 @@
         # pkgs.sbcl
         # pkgs.source-code-pro
         pkgs.tokei
+        pkgs.xh
         # pkgs.xonsh
         pkgs.yarn
         # pkgs.zellij
