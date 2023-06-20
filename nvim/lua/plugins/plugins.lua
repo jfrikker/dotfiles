@@ -28,6 +28,13 @@ return {
     enabled = false,
   },
   {
+    "ggandor/leap-spooky.nvim",
+    enabled = true,
+    opts = {
+        paste_on_remote_yank = true,
+    },
+  },
+  {
     "ggandor/flit.nvim",
     enabled = false,
   },
@@ -35,19 +42,25 @@ return {
   --   "rafamadriz/friendly-snippets",
   --   enabled = false,
   -- },
-  -- {
-  --   "folke/noice.nvim",
-  --   enabled = false,
-  --   opts = {
-  --     cmdline = {
-  --       view = "cmdline",
-  --     },
-  --   },
-  -- },
+  {
+    "folke/noice.nvim",
+    enabled = false,
+    opts = {
+      cmdline = {
+        view = "cmdline",
+      },
+    },
+  },
   {
     "echasnovski/mini.pairs",
     enabled = false,
   },
+  { "ellisonleao/gruvbox.nvim" },
+  {"rktjmp/lush.nvim" },
+  {"briones-gabriel/darcula-solid.nvim",
+    depends = {"rktjmp/lush.nvim" },
+  },
+  { "doums/darcula" },
   {
     "echasnovski/mini.indentscope",
     opts = {

@@ -12,7 +12,7 @@ pkgs: {
         nix_shell.symbol = " ";
         nodejs.symbol = " ";
         package.disabled = true;
-        palette = "catppuccin_macchiato";
+        palette = "catppuccin_frappe";
         python.symbol = " ";
         package.symbol = " ";
         rust.symbol = " ";
@@ -24,5 +24,5 @@ pkgs: {
             repo = "starship";
             rev = "3e3e54410c3189053f4da7a7043261361a1ed1bc"; # Replace with the latest commit hash
             sha256 = "soEBVlq3ULeiZFAdQYMRFuswIIhI9bclIU8WXjxd7oY=";
-          } + /palettes/macchiato.toml));
+          } + /palettes/frappe.toml));
 }

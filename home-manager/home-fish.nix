@@ -6,6 +6,7 @@ pkgs:
         du = "dust";
         http = "xh";
         https = "xh";
+        mux = "tmuxinator";
         nsh = "nix-shell --command fish";
       };
 

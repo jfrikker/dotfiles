@@ -6,7 +6,7 @@
     home.username = "jfrikker";
     home.homeDirectory = "/Users/jfrikker";
 
-    home.sessionVariables.BAT_THEME = "catppuccin-macchiato";
+    home.sessionVariables.BAT_THEME = "catppuccin-frappe";
     home.sessionVariables.EDITOR = "nvim";
     home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
 
@@ -18,7 +18,7 @@
             repo = "k9s";
             rev = "322598e19a4270298b08dc2765f74795e23a1615"; # Replace with the latest commit hash
             sha256 = "GrRCOwCgM8BFhY8TzO3/WDTUnGtqkhvlDWE//ox2GxI=";
-        } + /dist/macchiato.yml;
+        } + /dist/frappe.yml;
     };
 
     xdg.configFile."lazygit/config.yml" = {
@@ -29,17 +29,17 @@
             repo = "lazygit";
             rev = "b2ecb6d41b6f54a82104879573c538e8bdaeb0bf"; # Replace with the latest commit hash
             sha256 = "9BBmWRcjNaJE9T0RKVEJaSnkrbMom0CLYE8PzAT6yFw=";
-        } + /themes/macchiato.yml;
+        } + /themes/frappe.yml;
     };
 
-    xdg.configFile."fish/themes/Catppuccin Macchiato.theme" = {
+    xdg.configFile."fish/themes/Catppuccin Frappe.theme" = {
           enable = true;
           source = pkgs.fetchFromGitHub {
             owner = "catppuccin";
             repo = "fish";
             rev = "91e6d6721362be05a5c62e235ed8517d90c567c9";
             sha256 = "l9V7YMfJWhKDL65dNbxaddhaM6GJ0CFZ6z+4R6MJwBA=";
-          } + "/themes/Catppuccin Macchiato.theme";
+          } + "/themes/Catppuccin Frappe.theme";
     };
 
     home.packages = [

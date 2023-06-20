@@ -2,7 +2,19 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-macchiato",
+      colorscheme = "catppuccin",
     },
   },
+  { "catppuccin/nvim",
+        name = "catppuccin",
+        opts = {
+            flavour = "frappe",
+        },
+  },
+  { "ellisonleao/gruvbox.nvim" },
+  {"rktjmp/lush.nvim" },
+  {"briones-gabriel/darcula-solid.nvim",
+    depends = {"rktjmp/lush.nvim" },
+  },
+  { "doums/darcula" },
 }

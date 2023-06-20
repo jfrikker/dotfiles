@@ -7,5 +7,6 @@ opt.autowriteall = true
 opt.colorcolumn = "100"
 opt.hidden = false
 opt.tabstop = 4
+opt.sidescrolloff = 0
 opt.shiftwidth = 4
 opt.relativenumber = false
