@@ -15,6 +15,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.editor.flash" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -45,5 +46,3 @@ require("lazy").setup({
     },
   },
 })
-
-vim.api.nvim_set_hl(0, "@type.qualifier", { link = "Keyword" })

@@ -27,13 +27,13 @@ return {
     "windwp/nvim-spectre",
     enabled = false,
   },
-  {
-    "ggandor/leap-spooky.nvim",
-    enabled = true,
-    opts = {
-        paste_on_remote_yank = true,
-    },
-  },
+  -- {
+  --   "ggandor/leap-spooky.nvim",
+  --   enabled = true,
+  --   opts = {
+  --       paste_on_remote_yank = true,
+  --   },
+  -- },
   {
     "ggandor/flit.nvim",
     enabled = false,
@@ -69,17 +69,17 @@ return {
       },
     },
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = function(_, opts)
-  --     local cmp = require("cmp")
-  --     opts.sources = cmp.config.sources({
-  --       { name = "nvim_lsp" },
-  --       -- { name = "luasnip" },
-  --     })
-  --     return opts
-  --   end,
-  -- },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+      })
+      return opts
+    end,
+  },
   {
     "nvim-treesitter/nvim-treesitter-context",
     depends = {
