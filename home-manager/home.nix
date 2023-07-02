@@ -69,6 +69,7 @@
         pkgs.nodejs-16_x
         pkgs.nodePackages.typescript-language-server
         # pkgs.postgresql
+        (pkgs.python3.withPackages (p: [p.ipython]))
         pkgs.ripgrep
         # pkgs.rlwrap
         # pkgs.rust-analyzer

@@ -5,7 +5,6 @@ return {
   },
   {
     "stevearc/dressing.nvim",
-    enabled = false,
   },
   {
     "akinsho/bufferline.nvim",
