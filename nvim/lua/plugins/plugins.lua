@@ -3,9 +3,9 @@ return {
     "goolord/alpha-nvim",
     enabled = false,
   },
-  {
-    "stevearc/dressing.nvim",
-  },
+  -- {
+  --   "stevearc/dressing.nvim",
+  -- },
   {
     "akinsho/bufferline.nvim",
     enabled = false,
@@ -33,10 +33,10 @@ return {
   --       paste_on_remote_yank = true,
   --   },
   -- },
-  {
-    "ggandor/flit.nvim",
-    enabled = false,
-  },
+  -- {
+  --   "ggandor/flit.nvim",
+  --   enabled = false,
+  -- },
   -- {
   --   "rafamadriz/friendly-snippets",
   --   enabled = false,
@@ -51,15 +51,28 @@ return {
     },
   },
   {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        search = {
+          enabled = false,
+        },
+        char = {
+          enabled = false,
+        },
+      }
+    },
+  },
+  {
     "echasnovski/mini.pairs",
     enabled = false,
   },
-  { "ellisonleao/gruvbox.nvim" },
-  {"rktjmp/lush.nvim" },
-  {"briones-gabriel/darcula-solid.nvim",
-    depends = {"rktjmp/lush.nvim" },
-  },
-  { "doums/darcula" },
+  -- { "ellisonleao/gruvbox.nvim" },
+  -- {"rktjmp/lush.nvim" },
+  -- {"briones-gabriel/darcula-solid.nvim",
+  --   depends = {"rktjmp/lush.nvim" },
+  -- },
+  -- { "doums/darcula" },
   {
     "echasnovski/mini.indentscope",
     opts = {
