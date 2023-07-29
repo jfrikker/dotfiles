@@ -49,7 +49,7 @@
         pkgs.awscli
         pkgs.bashInteractive
         pkgs.du-dust
-        # pkgs.emacs
+        pkgs.emacs
         pkgs.fd
         pkgs.fend
         # pkgs.ghc
@@ -71,13 +71,13 @@
         # pkgs.postgresql
         (pkgs.python3.withPackages (p: [p.ipython]))
         pkgs.ripgrep
-        # pkgs.rlwrap
+        pkgs.rlwrap
         # pkgs.rust-analyzer
         pkgs.rust-script
         pkgs.rust-bin.stable."1.68.0".default
         pkgs.rust-bin.stable."1.68.0".rust-analyzer
         # pkgs.rustup
-        # pkgs.sbcl
+        pkgs.sbcl
         # pkgs.source-code-pro
         pkgs.tokei
         pkgs.xh
