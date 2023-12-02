@@ -1,11 +1,12 @@
 return {
   {
-    "goolord/alpha-nvim",
+    "nvimdev/dashboard-nvim",
     enabled = false,
   },
-  -- {
-  --   "stevearc/dressing.nvim",
-  -- },
+  {
+    "stevearc/dressing.nvim",
+    enabled = false,
+  },
   {
     "akinsho/bufferline.nvim",
     enabled = false,
@@ -23,7 +24,11 @@ return {
   --   enabled = false,
   -- },
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
+    enabled = false,
+  },
+  {
+    "persistence.nvim",
     enabled = false,
   },
   -- {
@@ -123,4 +128,42 @@ return {
       return opts
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "sql" })
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+        integrations = {
+            alpha = false,
+            navic = false,
+            lsp_trouble = false,
+            trouble = false,
+        }
+    }
+  },
+    {
+    "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("chatgpt").setup({
+            show_quickfixes_cmd = "cope",
+            edit_with_instructions = {
+                keymaps = {
+                    use_output_as_input = "<C-r>",
+                },
+            },
+        })
+        end,
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        },
+    },
 }

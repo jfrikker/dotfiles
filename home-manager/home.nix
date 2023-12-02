@@ -49,13 +49,15 @@
         pkgs.awscli
         pkgs.bashInteractive
         pkgs.du-dust
-        pkgs.emacs
+        pkgs.emacs29
         pkgs.fd
         pkgs.fend
-        # pkgs.ghc
+        pkgs.gh
+        pkgs.ghc
         # pkgs.go
         # pkgs.haskellPackages.cabal-install
-        # pkgs.haskellPackages.haskell-language-server
+        pkgs.haskellPackages.haskell-language-server
+        pkgs.helix
         # pkgs.httpie
         # pkgs.inconsolata-nerdfont
         pkgs.jdt-language-server
@@ -69,7 +71,7 @@
         pkgs.nodejs-16_x
         pkgs.nodePackages.typescript-language-server
         # pkgs.postgresql
-        (pkgs.python3.withPackages (p: [p.ipython]))
+        (pkgs.python3.withPackages (p: [p.ipython p.pyyaml p.boto3]))
         pkgs.ripgrep
         pkgs.rlwrap
         # pkgs.rust-analyzer
@@ -79,6 +81,7 @@
         # pkgs.rustup
         pkgs.sbcl
         # pkgs.source-code-pro
+        pkgs.stack
         pkgs.tokei
         pkgs.xh
         # pkgs.xonsh
@@ -103,7 +106,7 @@
     programs.bash.enable = true;
     programs.bat = import ./home-bat.nix pkgs;
     programs.btop.enable = true;
-    programs.exa = import ./home-exa.nix;
+    programs.eza = import ./home-exa.nix;
     programs.fish = import ./home-fish.nix pkgs;
     programs.fzf = import ./home-fzf.nix;
     # programs.gh.enable = true;
