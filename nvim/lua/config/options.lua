@@ -10,3 +10,5 @@ opt.tabstop = 4
 opt.sidescrolloff = 0
 opt.shiftwidth = 4
 opt.relativenumber = false
+
+vim.g.autoformat = false

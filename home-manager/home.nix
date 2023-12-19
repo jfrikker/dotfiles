@@ -49,7 +49,7 @@
         pkgs.awscli
         pkgs.bashInteractive
         pkgs.du-dust
-        pkgs.emacs29
+        # pkgs.emacs29
         pkgs.fd
         pkgs.fend
         pkgs.gh
@@ -62,16 +62,16 @@
         # pkgs.inconsolata-nerdfont
         pkgs.jdt-language-server
         pkgs.just
-        pkgs.jsonnet
+        # pkgs.jsonnet
         pkgs.kubectl
-        pkgs.maven
+        # pkgs.maven
         pkgs.mysql-client
         # pkgs.neovide
         pkgs.neovim
-        pkgs.nodejs-16_x
+        # pkgs.nodejs-16_x
         pkgs.nodePackages.typescript-language-server
         # pkgs.postgresql
-        (pkgs.python3.withPackages (p: [p.ipython p.pyyaml p.boto3]))
+        # (pkgs.python3.withPackages (p: [p.ipython p.pyyaml p.boto3]))
         pkgs.ripgrep
         pkgs.rlwrap
         # pkgs.rust-analyzer
@@ -85,7 +85,7 @@
         pkgs.tokei
         pkgs.xh
         # pkgs.xonsh
-        pkgs.yarn
+        # pkgs.yarn
         # pkgs.zellij
     ];
 
@@ -112,14 +112,15 @@
     # programs.gh.enable = true;
     programs.git.enable = true;
     programs.git.delta.enable = true;
-    programs.java.enable = true;
-    programs.java.package = pkgs.jdk17;
+    # programs.java.enable = true;
+    # programs.java.package = pkgs.jdk17;
     programs.jq.enable = true;
     programs.k9s.enable = true;
     programs.lazygit.enable = true;
     programs.starship = import ./home-starship.nix pkgs;
     programs.tmux = import ./home-tmux.nix pkgs;
-    programs.zoxide.enable = true;
+    # programs.zoxide.enable = true;
+    programs.zsh = import ./home-zsh.nix;
 
     # programs.neovim = import ./home-neovim.nix pkgs;
 }

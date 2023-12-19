@@ -21,7 +21,7 @@ set -g @thumbs-unique enabled
             '';
         }
     ];
-    shell = pkgs.fish + "/bin/fish";
+    shell = pkgs.zsh + "/bin/zsh";
     shortcut = "Space";
     tmuxinator.enable = true;
     extraConfig = ''

@@ -6,7 +6,7 @@ return {
     --   { "mfussenegger/nvim-jdtls" },
     -- },
     opts = {
-      autoformat = false,
+      -- autoformat = false,
       --   servers = {
       --     jdtls = {},
       --   },

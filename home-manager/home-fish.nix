@@ -2,7 +2,6 @@ pkgs:
   {
     enable = true;
     shellAliases = {
-        cd = "z";
         du = "dust";
         http = "xh";
         https = "xh";
