@@ -32,15 +32,15 @@
         } + /themes/frappe.yml;
     };
 
-    xdg.configFile."fish/themes/Catppuccin Frappe.theme" = {
-          enable = true;
-          source = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "fish";
-            rev = "91e6d6721362be05a5c62e235ed8517d90c567c9";
-            sha256 = "l9V7YMfJWhKDL65dNbxaddhaM6GJ0CFZ6z+4R6MJwBA=";
-          } + "/themes/Catppuccin Frappe.theme";
-    };
+    # xdg.configFile."fish/themes/Catppuccin Frappe.theme" = {
+    #       enable = true;
+    #       source = pkgs.fetchFromGitHub {
+    #         owner = "catppuccin";
+    #         repo = "fish";
+    #         rev = "91e6d6721362be05a5c62e235ed8517d90c567c9";
+    #         sha256 = "l9V7YMfJWhKDL65dNbxaddhaM6GJ0CFZ6z+4R6MJwBA=";
+    #       } + "/themes/Catppuccin Frappe.theme";
+    # };
 
     home.packages = [
         # pkgs.apacheKafka
@@ -64,6 +64,7 @@
         pkgs.just
         # pkgs.jsonnet
         pkgs.kubectl
+        pkgs.lorri
         # pkgs.maven
         pkgs.mysql-client
         # pkgs.neovide
@@ -106,12 +107,14 @@
     programs.bash.enable = true;
     programs.bat = import ./home-bat.nix pkgs;
     programs.btop.enable = true;
+    programs.direnv.enable = true;
     programs.eza = import ./home-exa.nix;
-    programs.fish = import ./home-fish.nix pkgs;
+    # programs.fish = import ./home-fish.nix pkgs;
     programs.fzf = import ./home-fzf.nix;
     # programs.gh.enable = true;
     programs.git.enable = true;
     programs.git.delta.enable = true;
+    # programs.ion.enable = true;
     # programs.java.enable = true;
     # programs.java.package = pkgs.jdk17;
     programs.jq.enable = true;
@@ -120,7 +123,7 @@
     programs.starship = import ./home-starship.nix pkgs;
     programs.tmux = import ./home-tmux.nix pkgs;
     # programs.zoxide.enable = true;
-    programs.zsh = import ./home-zsh.nix;
+    programs.zsh = import ./home-zsh.nix pkgs;
 
     # programs.neovim = import ./home-neovim.nix pkgs;
 }

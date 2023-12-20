@@ -16,6 +16,7 @@ pkgs: {
         python.symbol = " ";
         package.symbol = " ";
         rust.symbol = " ";
+        docker_context.disabled = true;
         shell.disabled = false;
     } // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub
