@@ -6,20 +6,20 @@
     home.username = "jfrikker";
     home.homeDirectory = "/Users/jfrikker";
 
-    home.sessionVariables.BAT_THEME = "catppuccin-frappe";
+    # home.sessionVariables.BAT_THEME = "catppuccin-frappe";
     home.sessionVariables.EDITOR = "nvim";
     home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
 
     xdg.enable = true;
-    xdg.configFile."k9s/skin.yml" = {
-        enable = true;
-        source = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "k9s";
-            rev = "322598e19a4270298b08dc2765f74795e23a1615"; # Replace with the latest commit hash
-            sha256 = "GrRCOwCgM8BFhY8TzO3/WDTUnGtqkhvlDWE//ox2GxI=";
-        } + /dist/frappe.yml;
-    };
+    # xdg.configFile."k9s/skin.yml" = {
+    #     enable = true;
+    #     source = pkgs.fetchFromGitHub {
+    #         owner = "catppuccin";
+    #         repo = "k9s";
+    #         rev = "322598e19a4270298b08dc2765f74795e23a1615"; # Replace with the latest commit hash
+    #         sha256 = "GrRCOwCgM8BFhY8TzO3/WDTUnGtqkhvlDWE//ox2GxI=";
+    #     } + /dist/frappe.yml;
+    # };
 
     xdg.configFile."lazygit/config.yml" = {
         enable = true;
@@ -44,7 +44,7 @@
 
     home.packages = [
         # pkgs.apacheKafka
-        pkgs.aria
+        # pkgs.aria
         pkgs.aws-iam-authenticator
         pkgs.awscli
         pkgs.bashInteractive
@@ -53,14 +53,14 @@
         pkgs.fd
         pkgs.fend
         pkgs.gh
-        pkgs.ghc
+        # pkgs.ghc
         # pkgs.go
         # pkgs.haskellPackages.cabal-install
-        pkgs.haskellPackages.haskell-language-server
-        pkgs.helix
+        # pkgs.haskellPackages.haskell-language-server
+        # pkgs.helix
         # pkgs.httpie
         # pkgs.inconsolata-nerdfont
-        pkgs.jdt-language-server
+        # pkgs.jdt-language-server
         pkgs.just
         # pkgs.jsonnet
         pkgs.kubectl
@@ -70,7 +70,7 @@
         # pkgs.neovide
         pkgs.neovim
         # pkgs.nodejs-16_x
-        pkgs.nodePackages.typescript-language-server
+        # pkgs.nodePackages.typescript-language-server
         # pkgs.postgresql
         # (pkgs.python3.withPackages (p: [p.ipython p.pyyaml p.boto3]))
         pkgs.ripgrep
@@ -82,7 +82,7 @@
         # pkgs.rustup
         pkgs.sbcl
         # pkgs.source-code-pro
-        pkgs.stack
+        # pkgs.stack
         pkgs.tokei
         pkgs.xh
         # pkgs.xonsh
@@ -105,7 +105,7 @@
 
 
     programs.bash.enable = true;
-    programs.bat = import ./home-bat.nix pkgs;
+    # programs.bat = import ./home-bat.nix pkgs;
     programs.btop.enable = true;
     programs.direnv.enable = true;
     programs.eza = import ./home-exa.nix;
@@ -118,7 +118,7 @@
     # programs.java.enable = true;
     # programs.java.package = pkgs.jdk17;
     programs.jq.enable = true;
-    programs.k9s.enable = true;
+    # programs.k9s.enable = true;
     programs.lazygit.enable = true;
     programs.starship = import ./home-starship.nix pkgs;
     programs.tmux = import ./home-tmux.nix pkgs;
