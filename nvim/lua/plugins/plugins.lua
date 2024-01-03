@@ -50,10 +50,6 @@ return {
   --   "ggandor/flit.nvim",
   --   enabled = false,
   -- },
-  -- {
-  --   "rafamadriz/friendly-snippets",
-  --   enabled = false,
-  -- },
   {
     "folke/noice.nvim",
     enabled = false,
@@ -80,12 +76,6 @@ return {
     "echasnovski/mini.pairs",
     enabled = false,
   },
-  -- { "ellisonleao/gruvbox.nvim" },
-  -- {"rktjmp/lush.nvim" },
-  -- {"briones-gabriel/darcula-solid.nvim",
-  --   depends = {"rktjmp/lush.nvim" },
-  -- },
-  -- { "doums/darcula" },
   {
     "echasnovski/mini.indentscope",
     opts = {
@@ -104,13 +94,6 @@ return {
       })
       return opts
     end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    depends = {
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-    main = "treesitter-context",
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -155,23 +138,23 @@ return {
         }
     }
   },
-    {
-    "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("chatgpt").setup({
-            show_quickfixes_cmd = "cope",
-            edit_with_instructions = {
-                keymaps = {
-                    use_output_as_input = "<C-r>",
-                },
-            },
-        })
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        },
-    },
+  --  {
+  --  "jackMort/ChatGPT.nvim",
+  --      event = "VeryLazy",
+  --      config = function()
+  --          require("chatgpt").setup({
+  --          show_quickfixes_cmd = "cope",
+  --          edit_with_instructions = {
+  --              keymaps = {
+  --                  use_output_as_input = "<C-r>",
+  --              },
+  --          },
+  --      })
+  --      end,
+  --      dependencies = {
+  --          "MunifTanjim/nui.nvim",
+  --          "nvim-lua/plenary.nvim",
+  --          "nvim-telescope/telescope.nvim"
+  --      },
+  --  },
 }
