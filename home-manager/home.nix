@@ -8,7 +8,7 @@
 
     # home.sessionVariables.BAT_THEME = "catppuccin-frappe";
     home.sessionVariables.EDITOR = "nvim";
-    home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+    # home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
     
     home.sessionPath=[
         "$HOME/.cargo/bin"
