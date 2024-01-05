@@ -9,6 +9,10 @@
     # home.sessionVariables.BAT_THEME = "catppuccin-frappe";
     home.sessionVariables.EDITOR = "nvim";
     home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+    
+    home.sessionPath=[
+        "~/.cargo/bin"
+    ];
 
     xdg.enable = true;
     # xdg.configFile."k9s/skin.yml" = {
@@ -76,9 +80,9 @@
         pkgs.ripgrep
         pkgs.rlwrap
         # pkgs.rust-analyzer
-        pkgs.rust-script
-        pkgs.rust-bin.stable."1.68.0".default
-        pkgs.rust-bin.stable."1.68.0".rust-analyzer
+        # pkgs.rust-script
+        # pkgs.rust-bin.stable."1.68.0".default
+        # pkgs.rust-bin.stable."1.68.0".rust-analyzer
         # pkgs.rustup
         pkgs.sbcl
         # pkgs.source-code-pro
@@ -105,7 +109,7 @@
 
 
     programs.bash.enable = true;
-    # programs.bat = import ./home-bat.nix pkgs;
+    programs.bat = import ./home-bat.nix pkgs;
     programs.btop.enable = true;
     programs.direnv.enable = true;
     programs.eza = import ./home-exa.nix;
@@ -114,7 +118,7 @@
     # programs.gh.enable = true;
     programs.git.enable = true;
     programs.git.delta.enable = true;
-    # programs.ion.enable = true;
+    programs.ion.enable = true;
     # programs.java.enable = true;
     # programs.java.package = pkgs.jdk17;
     programs.jq.enable = true;
