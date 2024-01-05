@@ -11,7 +11,7 @@
     home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
     
     home.sessionPath=[
-        "~/.cargo/bin"
+        "$HOME/.cargo/bin"
     ];
 
     xdg.enable = true;
