@@ -6,6 +6,7 @@ pkgs: {
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     historySubstringSearch.enable = true;
+    history.share = false;
     cdpath = ["~/source"];
     plugins = [
       {

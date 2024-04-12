@@ -7,8 +7,11 @@
     home.homeDirectory = "/Users/jfrikker";
 
     # home.sessionVariables.BAT_THEME = "catppuccin-frappe";
-    home.sessionVariables.EDITOR = "nvim";
     # home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
+
+    # home.shellAliases = {
+    #     jdtls = "jdt-language-server";
+    # };
     
     home.sessionPath=[
         "$HOME/.cargo/bin"
@@ -53,9 +56,10 @@
         pkgs.awscli
         pkgs.bashInteractive
         pkgs.du-dust
-        # pkgs.emacs29
+        pkgs.emacs29
         pkgs.fd
         pkgs.fend
+        pkgs.gcc
         pkgs.gh
         # pkgs.ghc
         # pkgs.go
@@ -70,7 +74,7 @@
         pkgs.kubectl
         pkgs.lorri
         # pkgs.maven
-        pkgs.mysql-client
+        # pkgs.mysql-client
         # pkgs.neovide
         pkgs.neovim
         # pkgs.nodejs-16_x
@@ -110,7 +114,7 @@
 
     programs.bash.enable = true;
     programs.bat = import ./home-bat.nix pkgs;
-    programs.btop.enable = true;
+    # programs.btop.enable = true;
     programs.direnv.enable = true;
     programs.eza = import ./home-exa.nix;
     # programs.fish = import ./home-fish.nix pkgs;
@@ -118,7 +122,9 @@
     # programs.gh.enable = true;
     programs.git.enable = true;
     programs.git.delta.enable = true;
-    programs.ion.enable = true;
+    programs.helix.enable = true;
+    programs.helix.defaultEditor = true;
+    # programs.ion.enable = true;
     # programs.java.enable = true;
     # programs.java.package = pkgs.jdk17;
     programs.jq.enable = true;

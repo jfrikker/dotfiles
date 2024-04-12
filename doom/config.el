@@ -76,3 +76,25 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package! lispyville
+  :hook ((common-lisp-mode . lispyville-mode)
+         (emacs-lisp-mode . lispyville-mode)
+         (scheme-mode . lispyville-mode)
+         (racket-mode . lispyville-mode)
+         (hy-mode . lispyville-mode)
+         (lfe-mode . lispyville-mode)
+         (clojure-mode . lispyville-mode))
+  :config
+  (lispyville-set-key-theme
+   '(additional
+     additional-insert
+     (additional-movement normal visual motion)
+     (atom-movement normal visual)
+     c-w
+     c-u
+     (commentary normal visual)
+     escape
+     (operators normal)
+     (prettify insert)
+     slurp/barf)))

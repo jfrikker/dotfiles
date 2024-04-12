@@ -6,6 +6,20 @@ return {
     --   { "mfussenegger/nvim-jdtls" },
     -- },
     opts = {
+      servers = {
+        eslint = {
+          mason = false,
+        },
+        hls = {
+          mason = false,
+        },
+        jdtls = {
+          mason = false,
+        },
+        tsserver = {
+          mason = false,
+        }
+      }
       -- autoformat = false,
       --   servers = {
       --     jdtls = {},

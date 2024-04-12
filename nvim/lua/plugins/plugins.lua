@@ -35,10 +35,10 @@ return {
   --   "L3MON4D3/LuaSnip",
   --   enabled = false,
   -- },
-  {
-    "rafamadriz/friendly-snippets",
-    enabled = false,
-  },
+  -- {
+  --   "rafamadriz/friendly-snippets",
+  --   enabled = false,
+  -- },
   -- {
   --   "ggandor/leap-spooky.nvim",
   --   enabled = true,
@@ -90,7 +90,7 @@ return {
       local cmp = require("cmp")
       opts.sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        -- { name = "luasnip" },
+        { name = "luasnip" },
       })
       return opts
     end,
