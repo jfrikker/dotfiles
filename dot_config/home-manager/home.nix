@@ -55,6 +55,7 @@
         pkgs.aws-iam-authenticator
         pkgs.awscli
         pkgs.bashInteractive
+        pkgs.chezmoi
         pkgs.du-dust
         pkgs.emacs29
         pkgs.fd
