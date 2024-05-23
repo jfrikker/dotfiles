@@ -4,7 +4,7 @@ pkgs: {
         enable = true;
     };
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     historySubstringSearch.enable = true;
     history.share = false;
     cdpath = ["~/source"];
