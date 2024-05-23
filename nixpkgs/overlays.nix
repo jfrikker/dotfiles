@@ -4,24 +4,25 @@
 #         {
 #             helix = prev.rustPlatform.buildRustPackage rec {
 #                 pname = "helix";
-#                 version = "24.03";
-# 
+#                 version = "master";
+
 #                 # This release tarball includes source code for the tree-sitter grammars,
 #                 # which is not ordinarily part of the repository.
 #                 src = prev.fetchzip {
-#                     url = "https://github.com/helix-editor/helix/releases/download/${version}/helix-${version}-source.tar.xz";
-#                     hash = "sha256-1myVGFBwdLguZDPo1jrth/q2i5rn5R2+BVKIkCCUalc=";
+#                     # url = "https://github.com/helix-editor/helix/releases/download/${version}/helix-${version}-source.tar.xz";
+#                     url = "https://github.com/helix-editor/helix/archive/109f53fb60f1b126c4c9afd97dd75972725d04ac.zip";
+#                     hash = "sha256-WzxaZ+X5HGen81EWVi0dirMzH4xSh4hV1flXSLl0P1k=";
 #                     stripRoot = false;
 #                 };
-# 
+
 #                 cargoHash = "sha256-THzPUVcmboVJHu3rJ6rev3GrkNilZRMlitCx7M1+HBE=";
-# 
+
 #                 nativeBuildInputs = [ prev.git prev.installShellFiles prev.makeWrapper ];
-# 
+
 #                 postInstall = ''
 #                     # not needed at runtime
 #                     rm -r runtime/grammars/sources
-# 
+
 #                     mkdir -p $out/lib
 #                     cp -r runtime $out/lib
 #                     installShellCompletion contrib/completion/hx.{bash,fish,zsh}
@@ -32,7 +33,7 @@
 #                 postFixup = ''
 #                     wrapProgram $out/bin/hx --set HELIX_RUNTIME $out/lib/runtime
 #                 '';
-# 
+
 #                 meta = with prev.lib; {
 #                     description = "A post-modern modal text editor";
 #                     homepage = "https://helix-editor.com";

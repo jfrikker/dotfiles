@@ -14,17 +14,17 @@ pkgs: {
 set -g @catppuccin_window_default_text "#W"
 set -g @catppuccin_window_current_text "#W"'';
         }
-        {
-            plugin = pkgs.tmuxPlugins.tmux-thumbs;
-            extraConfig = ''
-set -g @thumbs-unique enabled
-            '';
-        }
+#         {
+#             plugin = pkgs.tmuxPlugins.tmux-thumbs;
+#             extraConfig = ''
+# set -g @thumbs-unique enabled
+#             '';
+#         }
     ];
     shell = pkgs.zsh + "/bin/zsh";
     shortcut = "Space";
     tmuxinator.enable = true;
-    terminal = "screen-256color";
+    terminal = "xterm-256color";
     extraConfig = ''
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
