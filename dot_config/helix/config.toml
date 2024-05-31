@@ -2,6 +2,7 @@ theme = "catppuccin_frappe"
 
 [editor]
 auto-format = false
+auto-pairs = false
 auto-save = true
 # completion-replace = true
 cursorline = true

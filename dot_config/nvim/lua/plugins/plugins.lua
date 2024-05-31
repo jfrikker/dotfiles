@@ -17,7 +17,13 @@ return {
   },
   {
     "folke/trouble.nvim",
-    enabled = false,
+    keys = {
+      {
+        "<leader>cS",
+        "<cmd>Trouble lsp toggle focus=false win.position=right win.size=103<cr>",
+        desc = "LSP references/definitions/... (Trouble)",
+      },
+    },
   },
   -- {
   --   "folke/todo-comments.nvim",
@@ -69,21 +75,21 @@ return {
         char = {
           enabled = false,
         },
-      }
+      },
     },
   },
   {
     "echasnovski/mini.pairs",
     enabled = false,
   },
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      draw = {
-        animation = require("mini.indentscope").gen_animation.none(),
-      },
-    },
-  },
+  -- {
+  --   "echasnovski/mini.indentscope",
+  --   opts = {
+  --     draw = {
+  --       animation = require("mini.indentscope").gen_animation.none(),
+  --     },
+  --   },
+  -- },
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
@@ -122,21 +128,21 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "sql" })
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "sql" })
     end,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     opts = {
-        integrations = {
-            alpha = false,
-            navic = false,
-            lsp_trouble = false,
-            trouble = false,
-        }
-    }
+      integrations = {
+        alpha = false,
+        navic = false,
+        -- lsp_trouble = false,
+        -- trouble = false,
+      },
+    },
   },
   --  {
   --  "jackMort/ChatGPT.nvim",
