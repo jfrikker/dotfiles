@@ -123,8 +123,7 @@
     # programs.gh.enable = true;
     programs.git.enable = true;
     programs.git.delta.enable = true;
-    programs.helix.enable = true;
-    programs.helix.defaultEditor = true;
+    programs.helix = import ./home-hx.nix;
     # programs.ion.enable = true;
     # programs.java.enable = true;
     # programs.java.package = pkgs.jdk17;
