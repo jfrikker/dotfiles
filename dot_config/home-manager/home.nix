@@ -89,7 +89,7 @@
         # pkgs.rust-bin.stable."1.68.0".default
         # pkgs.rust-bin.stable."1.68.0".rust-analyzer
         # pkgs.rustup
-        pkgs.sbcl
+        (pkgs.sbcl.withPackages (ps: with ps; [ agnostic-lizard alexandria serapeum slynk ]))
         # pkgs.source-code-pro
         # pkgs.stack
         pkgs.tokei
