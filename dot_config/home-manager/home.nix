@@ -52,18 +52,21 @@
     home.packages = [
         # pkgs.apacheKafka
         # pkgs.aria
+        pkgs.asdf_3_3
         pkgs.aws-iam-authenticator
         pkgs.awscli
         pkgs.bashInteractive
+        pkgs.cargo
         pkgs.chezmoi
         pkgs.du-dust
-        pkgs.emacs29
+        pkgs.emacs
         pkgs.fd
         pkgs.fend
         pkgs.gcc
         pkgs.gh
         # pkgs.ghc
         # pkgs.go
+        pkgs.graphviz
         # pkgs.haskellPackages.cabal-install
         # pkgs.haskellPackages.haskell-language-server
         # pkgs.helix
@@ -73,28 +76,89 @@
         pkgs.just
         # pkgs.jsonnet
         pkgs.kubectl
+        pkgs.ledger
         pkgs.lorri
         # pkgs.maven
-        # pkgs.mysql-client
+        pkgs.mysql-client
         # pkgs.neovide
         pkgs.neovim
         # pkgs.nodejs-16_x
         # pkgs.nodePackages.typescript-language-server
+        pkgs.openssh
         # pkgs.postgresql
         # (pkgs.python3.withPackages (p: [p.ipython p.pyyaml p.boto3]))
         pkgs.ripgrep
         pkgs.rlwrap
+        pkgs.roswell
         # pkgs.rust-analyzer
         # pkgs.rust-script
         # pkgs.rust-bin.stable."1.68.0".default
         # pkgs.rust-bin.stable."1.68.0".rust-analyzer
         # pkgs.rustup
-        (pkgs.sbcl.withPackages (ps: with ps; [ agnostic-lizard alexandria serapeum slynk ]))
+        (pkgs.sbcl.withPackages (ps: with ps; [
+            _3bmd
+            _3bmd-ext-code-blocks
+            agnostic-lizard
+            alexandria
+            anypool
+            arrows
+            async-process
+            binding-arrows
+            bt-semaphore
+            chanl
+            cl-annot
+            cl-charms
+            cl-markup
+            cl-migratum
+            cl-migratum_dot_provider_dot_local-path
+            cl-migratum_dot_driver_dot_dbi
+            cl-mock
+            cl-punch
+            cl-rdkafka
+            cl-readline
+            cl-setlocale
+            clack
+            clack-handler-hunchentoot
+            clack-handler-woo
+            dbd-mysql
+            dbi
+            dexador
+            fare-csv
+            fiveam
+            group-by
+            inquisitor
+            lack-request
+            lack-response
+            lisp-preprocessor
+            local-time
+            log4cl
+            mito
+            mockingbird
+            myway
+            prove
+            prove-asdf
+            queues
+            queues_dot_priority-cqueue
+            queues_dot_simple-cqueue
+            replic
+            serapeum
+            shasht
+            slynk
+            smug
+            split-sequence
+            str
+            sxql-composer
+            trivial-ws
+            trivial-open-browser
+            trivial-timeout
+            uuid
+            yason ]))
         # pkgs.source-code-pro
         # pkgs.stack
         pkgs.tokei
         pkgs.xh
         # pkgs.xonsh
+        pkgs.yubikey-manager
         # pkgs.yarn
         # pkgs.zellij
     ];
@@ -132,8 +196,11 @@
     programs.lazygit.enable = true;
     programs.starship = import ./home-starship.nix pkgs;
     programs.tmux = import ./home-tmux.nix pkgs;
-    # programs.zoxide.enable = true;
+    programs.wezterm = import ./home-wezterm.nix;
+    programs.zoxide.enable = true;
     programs.zsh = import ./home-zsh.nix pkgs;
 
     # programs.neovim = import ./home-neovim.nix pkgs;
+
+    # programs.emacs = import ./home-emacs.nix;
 }

@@ -98,3 +98,161 @@
      (operators normal)
      (prettify insert)
      slurp/barf)))
+
+(use-package! kubernetes-overview
+  :commands (kubernetes-overview)
+  :config
+  (setq kubernetes-poll-frequency 3600
+        kubernetes-redraw-frequency 3600))
+
+(use-package! kubernetes-evil
+  :after kubernetes-overview)
+
+(use-package! ledger-mode
+  :mode "\\.ledger\\'")
+
+(use-package! evil-ledger
+  :after ledger-mode
+  :config
+  (add-hook 'ledger-mode-hook #'evil-ledger-mode))
+
+
+                                        ; (use-package! org-transclusion
+                                        ;   :after org)
+
+(setq lsp-java-jdt-download-url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.42.0/jdt-language-server-1.42.0-202411281516.tar.gz")
+
+(setq sql-connection-alist
+      '((local
+         (sql-product 'mysql)
+         (sql-server "127.0.0.1")
+         (sql-user "root")
+         (sql-password "test")
+         (sql-database "ebdb")
+         (sql-port 3306))
+        (dev
+         (sql-product 'mysql)
+         (sql-server "kube-db.dev.internal.shibumi.com")
+         (sql-user "joe.frikker")
+         (sql-password "psStCkHDMJ2DyR6x")
+         (sql-database "mothership")
+         (sql-port 3306)
+         (sql-default-directory "/ssh:bastion.dev.internal.shibumi.com:"))))
+
+(after! projectile
+  (setq projectile-indexing-method 'alien))
+
+(after! magit
+  (setq magit-list-refs-sortby "-committerdate"))
+
+(setq lsp-java-configuration-maven-user-settings "/Users/jfrikker/.m2/settings.xml")
+
+(after! org
+  (setq org-todo-keywords
+        '((sequence
+           "TODO(o)"                    ; A task that needs doing
+           "IN_PROGRESS(p!)"            ; Task is in progress
+           "HOLD(h@)"                   ; Task is being held up or paused
+           "|"
+           "DONE(d!)"
+           "CANCELLED(c@)"))
+        org-todo-keyword-faces
+        '(("IN_PROGRESS"  . +org-todo-active)
+          ("HOLD" . +org-todo-onhold)
+          ("CANCELLED"   . +org-todo-cancel)))
+
+  (setq org-capture-templates
+        '(("t" "Personal todo" entry
+           (file+headline +org-capture-todo-file "Inbox")
+           "* TODO %?\n%i\n%a" :prepend t)
+          ("d" "Decision" entry
+           (file+headline "decisions.org" "Unfiled")
+           "* %?\n:properties:\n%^{ORG-LEVEL|Sprint Team}p:end:\n#What\n\n#Why\n\n#When\n\n%u"))))
+
+(defun org-columns-dblock-write-default (ipos table params)
+  "Write out a columnview table at position IPOS in the current buffer.
+TABLE is a table with data as produced by `org-columns--capture-view'.
+PARAMS is the parameter property list obtained from the dynamic block
+definition."
+  (let ((link (plist-get params :link))
+	(width-specs
+	 (mapcar (lambda (spec) (nth 2 spec))
+		 org-columns-current-fmt-compiled)))
+    (when table
+      ;; Prune level information from the table.  Also normalize
+      ;; headings: remove stars, add indentation entities, if
+      ;; required, and possibly precede some of them with a horizontal
+      ;; rule.
+      (let ((item-index
+	     (let ((p (assoc "ITEM" org-columns-current-fmt-compiled)))
+	       (and p (cl-position p
+				   org-columns-current-fmt-compiled
+				   :test #'equal))))
+	    (hlines (plist-get params :hlines))
+	    (indent (plist-get params :indent))
+	    new-table)
+	;; Copy header and first rule.
+	(push (pop table) new-table)
+	(push (pop table) new-table)
+	(dolist (row table (setq table (nreverse new-table)))
+	  (let ((level (car row)))
+	    (when (and (not (eq (car new-table) 'hline))
+		       (or (eq hlines t)
+			   (and (numberp hlines) (<= level hlines))))
+	      (push 'hline new-table))
+	    (when item-index
+	      (let* ((raw (nth item-index (cdr row)))
+		     (cleaned (org-columns--clean-item raw))
+		     (item (if (not link) cleaned
+			     (let ((search (org-link-heading-search-string raw)))
+			       (org-link-make-string
+				search
+				cleaned)))))
+		(setf (nth item-index (cdr row))
+		      (if (and indent (> level 1))
+			  (concat "\\_" (make-string (* 2 (1- level)) ?\s) item)
+			item))))
+	    (push (cdr row) new-table))))
+      (when (plist-get params :vlines)
+	(setq table
+	      (let ((size (length org-columns-current-fmt-compiled)))
+		(append (mapcar (lambda (x) (if (eq 'hline x) x (cons "" x)))
+				table)
+			(list (cons "/" (make-list size "<>")))))))
+      (when (seq-find #'identity width-specs)
+        ;; There are width specifiers in column format.  Pass them
+        ;; to the resulting table, adding alignment field as the first
+        ;; row.
+        (push (mapcar (lambda (width) (when width (format "<%d>" width))) width-specs) table))
+      ;; now insert the table into the buffer
+      (goto-char ipos)
+      (let ((content-lines (org-split-string (plist-get params :content) "\n"))
+	    recalc)
+	;; Insert affiliated keywords before the table.
+	(when content-lines
+	  (while (string-match-p "\\`[ \t]*#\\+" (car content-lines))
+	    (insert (string-trim-left (pop content-lines)) "\n")))
+	(save-excursion
+	  ;; Insert table at point.
+	  (insert
+	   (mapconcat (lambda (row)
+			(if (eq row 'hline) "|-|"
+			  (format "|%s|" (mapconcat #'identity row "|"))))
+		      table
+		      "\n"))
+	  ;; Insert TBLFM lines following table.
+	  (let ((case-fold-search t))
+	    (dolist (line content-lines)
+	      (when (string-match-p "\\`[ \t]*#\\+TBLFM:" line)
+		(insert "\n" (string-trim-left line))
+		(unless recalc (setq recalc t))))))
+	(when recalc (org-table-recalculate 'all t))
+	(org-table-align)
+        (when (seq-find #'identity width-specs)
+          (org-table-shrink))))))
+(map!
+ :nv "g w" #'avy-goto-word-1
+ :nv "g r" #'+lookup/references
+ :nv "SPC D" #'+default/diagnostics
+ :nv "] e" #'flycheck-next-error
+ :nv "[ e" #'flycheck-previous-error)

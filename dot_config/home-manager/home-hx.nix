@@ -42,16 +42,16 @@
 
     languages.language-server.jdtls.config.java.format.settings.url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml";
 
-    languages.languages = [
+    languages.language = [
         {
             name = "typescript";
-            language-servers = [ "typescript-language-server" "eslint" ];
+            language-servers = [ "typescript-language-server" "vscode-eslint-language-server" ];
             indent.tab-width = 4;
             indent.unit = "    ";
         }
         {
             name = "tsx";
-            language-servers = [ "typescript-language-server" "eslint" ];
+            language-servers = [ "typescript-language-server" "vscode-eslint-language-server" ];
             indent.tab-width = 4;
             indent.unit = "    ";
         }

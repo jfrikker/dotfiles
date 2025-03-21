@@ -31,5 +31,6 @@ bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
 bind-key -T launcher g popup -h 100% -w 100% -E lazygit
 bind-key g switch-client -Tlauncher
+set -g default-command ""
     '';
 }
