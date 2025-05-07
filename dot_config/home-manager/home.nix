@@ -122,6 +122,7 @@
             clack-handler-woo
             dbd-mysql
             dbi
+            deploy
             dexador
             fare-csv
             fiveam
