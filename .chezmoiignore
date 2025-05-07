@@ -1,3 +1,0 @@
-{{- if ne .laptop "shibumi" }}
-.config/tmuxinator
-{{- end }}
