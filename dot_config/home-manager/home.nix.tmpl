@@ -3,8 +3,8 @@
 {
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
-    home.username = "jfrikker";
-    home.homeDirectory = "/Users/jfrikker";
+    home.username = {{ .chezmoi.username | quote }};
+    home.homeDirectory = {{ .chezmoi.homeDir | quote }};
 
     # home.sessionVariables.BAT_THEME = "catppuccin-frappe";
     # home.sessionVariables.RUST_SRC_PATH = "${pkgs.rust-bin.stable."1.68.0".rust-src}/lib/rustlib/src/rust/library";
@@ -56,24 +56,24 @@
         pkgs.aws-iam-authenticator
         pkgs.awscli
         pkgs.bashInteractive
-        pkgs.cargo
+        # pkgs.cargo
         pkgs.chezmoi
         pkgs.du-dust
         pkgs.emacs
         pkgs.fd
         pkgs.fend
-        pkgs.gcc
+        # pkgs.gcc
         pkgs.gh
         # pkgs.ghc
         # pkgs.go
-        pkgs.graphviz
+        # pkgs.graphviz
         # pkgs.haskellPackages.cabal-install
         # pkgs.haskellPackages.haskell-language-server
         # pkgs.helix
         # pkgs.httpie
         # pkgs.inconsolata-nerdfont
         # pkgs.jdt-language-server
-        pkgs.just
+        # pkgs.just
         # pkgs.jsonnet
         pkgs.kubectl
         pkgs.ledger
@@ -187,6 +187,8 @@
     programs.fzf = import ./home-fzf.nix;
     # programs.gh.enable = true;
     programs.git.enable = true;
+    programs.git.userName = "Joe Frikker";
+    programs.git.userEmail = {{ .email | quote }};
     programs.git.delta.enable = true;
     programs.helix = import ./home-hx.nix;
     # programs.ion.enable = true;

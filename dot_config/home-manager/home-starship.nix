@@ -2,6 +2,7 @@ pkgs: {
     enable = true;
     settings = {
         add_newline = false;
+        container.diabled = true;
         git_branch.symbol = " ";
         git_status.ahead = "⇡\${count}";
         git_status.behind = "⇣\${count}";
